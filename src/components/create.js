@@ -1,12 +1,24 @@
 import React from "react";
 import { Button, Checkbox, Form } from "semantic-ui-react";
 import { useState } from "react";
+import axios from "axios";
 
 export default function Create() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [checkbox, setCheckbox] = useState(false);
+  // const postData = () => {
+  //   console.log(firstName);
+  //   console.log(lastName);
+  //   console.log(checkbox);
+  // };
+  // fake api - https://60fbca4591156a0017b4c8a7.mockapi.io/fakeData
   const postData = () => {
+    axios.post(`https://643eb2bb6c30feced8309eb8.mockapi.io/mockData`, {
+      firstName,
+      lastName,
+      checkbox,
+    });
     console.log(firstName);
     console.log(lastName);
     console.log(checkbox);
